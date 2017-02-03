@@ -68,6 +68,7 @@ ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
 # Generate certs
 
 openssl req -new -x509 -nodes -out /etc/openldap/certs/nti310ldapcert.pem -keyout /etc/openldap/certs/nti310ldapkey.pem -days 365 -subj "/C=US/ST=WA/L=Seattle/O=SCC/OU=IT/CN=nti310.local"
+# -subj precedes the answers and allows you to automate it. 
 
 chown -R ldap. /etc/openldap/certs/nti*.pem
 
